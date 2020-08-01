@@ -1,0 +1,18 @@
+<!--pages/video/video.wxml-->
+<view class="video-list" wx:for="{{movieList}}" wx:key="user">
+  <view class="video-title">标题：{{item.title}}</view>
+  <view class="video-time">时间：{{formatData(item.create_time)}}</view>
+  <video src="{{item.src}}" objectFit="fill"></video>
+</view>
+<wxs module="formatData">
+  module.exports = function(timestamp) {
+    var data = getDate(timestamp)
+    var y = data.getFullYear()
+    var m = data.getMonth()+1
+    var d = data.getDate()
+    var h = data.getHours()
+    var i = data.getMinutes()
+    var s = data.getSeconds()
+    return y+'-'+m+'-'+d+'-'+h+':'+i+':'+s
+  }
+</wxs>
