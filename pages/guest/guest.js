@@ -117,8 +117,8 @@ Page({
 })
 
 var server = {
-  appid: 'wxa571560f19f6703a',
-  secret: 'R14789R6352',
+  appid: '', //需要填写开发者的APPID
+  secret: '', //需要填写开发者的APPSecret
   user: {openid:'',formId:''},
   post: function(data, success){
     console.log('收到客户端提交的数据：',data)
